@@ -1,0 +1,102 @@
+@font-face {
+    font-family: "Red Hat Display", sans-serif;
+    src: url("RedHatDisplay.ttf");
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 10px;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    font-family: Helvetica;
+    font-size: 1.6rem;
+
+    /* background-color: #000816; */
+
+    /* color: white; */
+}
+
+:is(h1, h2, h3, h4, h5, h6, p) {
+    margin: 0;
+}
+
+h2 {
+    font-family: "Red Hat Display";
+    text-transform: uppercase;
+    font-weight: 350;
+    font-size: 3.6rem;
+}
+
+p + p {
+    margin-top: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.signup {
+    display: flex;
+    flex-grow: 1;
+}
+
+.su_img-col {
+    background-image: url("008.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40%;
+    height: auto;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.img-col_logo {
+    margin-top: auto;
+    color: white;
+    text-align: center;
+    padding: 35px;
+    border-radius: 100%;
+    background-color: hsla(0, 0%, 0%, 0.85);
+    aspect-ratio: 1;
+}
+
+.su_logo {
+    max-width: 115px;
+    width: 100%;
+}
+
+.img-col_fter {
+    margin-top: auto;
+    background-color: hsl(0, 0%, 0%, 0.5);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+
+/* General */
+a {
+    text-decoration: none;
+    color: rgb(100, 216, 255);
+}
+
+a:hover {
+    color: rgb(0, 190, 253);
+}
