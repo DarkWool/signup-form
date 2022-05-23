@@ -1,6 +1,11 @@
 @font-face {
-    font-family: "Red Hat Display", sans-serif;
-    src: url("RedHatDisplay.ttf");
+    font-family: "Red Hat Display";
+    src: url("fonts/RedHatDisplay.ttf");
+}
+
+@font-face {
+    font-family: Inter;
+    src: url("fonts/Inter.ttf");
 }
 
 *,
@@ -11,6 +16,9 @@
 
 :root {
     font-size: 10px;
+    --primary-color: hsl(0, 100%, 58%);
+    --error-color: hsl(0, 100%, 39%);
+
 }
 
 html,
@@ -20,16 +28,16 @@ body {
 
 body {
     display: flex;
-    font-family: Helvetica;
+    font-family: Inter;
     font-size: 1.6rem;
-
-    /* background-color: #000816; */
-
-    /* color: white; */
 }
 
 :is(h1, h2, h3, h4, h5, h6, p) {
     margin: 0;
+}
+
+h1 {
+    margin-bottom: 15px;
 }
 
 h2 {
@@ -48,13 +56,16 @@ img {
     height: auto;
 }
 
+
+
+/* First column */
 .signup {
     display: flex;
     flex-grow: 1;
 }
 
 .su_img-col {
-    background-image: url("008.jpg");
+    background-image: url("images/rur-background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -84,19 +95,190 @@ img {
 
 .img-col_fter {
     margin-top: auto;
-    background-color: hsl(0, 0%, 0%, 0.5);
+    background-color: hsl(0, 0%, 0%, 0.75);
     width: 100%;
     text-align: center;
     padding: 10px 0;
 }
 
 
+
+/* Second column */
+.su_form-col {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.form-col_top {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    max-width: 900px;
+    padding: 0 50px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.form-col_mid {
+    background-color: hsl(216, 33%, 97%);
+    padding: 50px;
+    margin: 30px 0;
+}
+
+.su_form-col > div:last-child {
+    flex-basis: 100%;
+    padding: 0 50px;
+}
+
+.form-col_mid > div {
+    max-width: 900px;
+}
+
+
+
+/* Form and inputs */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 50px;
+}
+
+.su_input {
+    max-width: 300px;
+    width: 100%;
+}
+
+.su_input > label {
+    margin-bottom: 4px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    letter-spacing: 2px;
+}
+
+input:is([type="text"], [type="tel"], [type="password"], [type="number"], [type="email"]) {
+    width: 100%;
+    appearance: none;
+    border: 1px solid hsl(0, 0%, 83%);
+    border-radius: 5px;
+    font-size: 1.6rem;
+    padding: 10px 10px;
+}
+
+input:focus {
+    appearance: none;
+    outline: 1px solid hsl(221, 100%, 56%);
+    box-shadow: 0px 3px 5px hsla(219, 100%, 26%, 0.173);
+}
+
+input.error {
+    border: 1px solid var(--error-color);
+    background-color: hsl(0, 100%, 97.5%);
+}
+
+p.error {
+    color: var(--error-color);
+    margin-top: 10px;
+    font-size: 1.4rem;
+}
+
+
+
 /* General */
 a {
     text-decoration: none;
-    color: rgb(100, 216, 255);
+    color: var(--primary-color);
+    transition: color 0.2s ease;
 }
 
 a:hover {
-    color: rgb(0, 190, 253);
+    color: hsl(39, 100%, 37%);
+}
+
+
+
+/* Utilities */
+.i-text {
+    font-style: italic;
+}
+
+.accent {
+    color: var(--primary-color);
+}
+
+
+
+/* Buttons */
+button {
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.submit-btn {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    padding: 14px 35px;
+    background-color: var(--primary-color);
+    box-shadow: 0 5px 15px hsla(0, 100%, 50%, 0.18);
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: hsl(0, 80%, 38%);
+}
+
+
+
+/* Media queries */
+@media only screen and (max-width: 1024px) {
+    .form-col_top {
+        font-size: 1.6rem;
+    }
+
+    .submit-btn {
+        font-size: 1.6rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        height: auto;
+    }
+
+    .signup {
+        flex-direction: column-reverse;
+    }
+
+    .su_img-col {
+        width: 100%;
+    }
+
+    .su_form-col {
+        width: 100%;
+        padding: 50px 0;
+    }
+
+    .img-col_logo {
+        margin: 30px;
+    }
+
+    .su_logo {
+        max-width: 80px;
+    }
+
+    h2 {
+        font-size: 2.4rem;
+    }
+
+    .su_input {
+        max-width: 100%;
+    }
 }

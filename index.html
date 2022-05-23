@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odin - Sign Up</title>
+    <title>Archie - Sign Up</title>
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,11 +13,58 @@
         <!-- First col -->
         <div class="su_img-col">
             <div class="img-col_logo">
-                <img src="logo-white.png" class="su_logo">
+                <img src="images/logo-white.png" class="su_logo" alt="Logo of Archie that shows multiple buildings">
                 <h2>Archie</h2>
             </div>
             <div class="img-col_fter">
-                <p>Photo by <a href="#">todo</a> check his work here.</p>
+                <p>Photo by <a href="https://unsplash.com/@issrur" target="_blank">Rur</a> on <a href="https://unsplash.com/photos/k3ID76Os97w" target="_blank">Unsplash.</a></p>
+            </div>
+        </div>
+        <!-- Second col -->
+        <div class="su_form-col">
+            <div class="form-col_top">
+                <p>
+                    This is not a real online service! You know you need something like this in your life to help you
+                    realize your deepest dreams.
+                    <br> 
+                    Sign up <span class="i-text accent">now</span> to get started.</p>
+                <p>You <span class="i-text accent">know</span> you want to.</p>
+            </div>
+            <div class="form-col_mid">
+                <div class="">
+                    <h1>Sign Up</h1>
+                    <form action="#" method="POST" id="signupForm">
+                        <div class="su_input">
+                            <label for="firstName">First name</label>
+                            <input type="text" id="firstName">
+                        </div>
+                        <div class="su_input">
+                            <label for="lastName">Last name</label>
+                            <input type="text" id="lastName">
+                        </div>
+                        <div class="su_input">
+                            <label for="emailForm">Email</label>
+                            <input type="email" id="emailForm">
+                        </div>
+                        <div class="su_input">
+                            <label for="userPhone">Phone number</label>
+                            <input type="tel" id="userPhone">
+                        </div>
+                        <div class="su_input">
+                            <label for="userPassword">Password</label>
+                            <input type="password" id="userPassword" class="error">
+                            <p class="error">* Passwords do not match.</p>
+                        </div>
+                        <div class="su_input">
+                            <label for="userConfirm">Confirm password</label>
+                            <input type="password" id="userConfirm" class="error">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="">
+                <button type="submit" class="submit-btn">Create account</button>
+                <p>Already have an account? <a href="#">Log in</a></p>
             </div>
         </div>
     </section>
